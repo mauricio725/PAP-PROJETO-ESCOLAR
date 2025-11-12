@@ -1,0 +1,2 @@
+# PAP-PROJETO-ESCOLAR
+Projeto desenvolvido no âmbito da Prova de Aptidão Profissional (PAP). O sistema tem como objetivo gerir e controlar as despesas relacionadas com os diferentes serviços prestados pela empresa, tais como transporte rodoviário de passageiros e mercadorias, animação turística, alojamento local, e gestão florestal.  O projeto foi criado utilizando Vite + React e configurado com Tailwind CSS para o design responsivo. O código é versionado e atualizado através do GitHub Desktop, permitindo a sincronização e armazenamento das versões do projeto na nuvem.
