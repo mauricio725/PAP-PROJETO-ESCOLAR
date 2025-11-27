@@ -1,156 +1,145 @@
-// src/App.jsx
-import React from "react";
-import "./assets/css/main.css";
-import "./assets/css/noscript.css";
+import React, { useEffect, useState } from 'react';
+import '../css/bootstrap.css';
+import '../css/font-awesome.min.css';
+import '../css/style.css';
+import '../css/responsive.css';
 
-// Importa imagens do template
-import pic01 from "./assets/images/pic01.jpg";
-import pic02 from "./assets/images/pic02.jpg";
-import pic03 from "./assets/images/pic03.jpg";
-import pic04 from "./assets/images/pic04.jpg";
-import pic05 from "./assets/images/pic05.jpg";
-import pic06 from "./assets/images/pic06.jpg";
-import pic07 from "./assets/images/pic07.jpg";
+export default function App() {
+  const [visible, setVisible] = useState(true);
+  const [fading, setFading] = useState(false);
 
-function App() {
+  useEffect(() => { document.title = 'A S M P Transportes e Turismo, Lda.'; }, []);
+
+  useEffect(() => {
+    let t2;
+    const t1 = setTimeout(() => {
+      setFading(true);
+      t2 = setTimeout(() => setVisible(false), 600);
+    }, 1500);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+
   return (
-    <div id="page-wrapper">
-      {/* Header */}
-      <header id="header" className="alt">
-        <h1><a href="/">Minha PAP</a></h1>
-        <nav><a href="#menu">Menu</a></nav>
-      </header>
-
-      {/* Menu */}
-      <nav id="menu">
-        <div className="inner">
-          <h2>Menu</h2>
-          <ul className="links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">Sobre</a></li>
-            <li><a href="/project">Projeto</a></li>
-            <li><a href="/contact">Contacto</a></li>
-          </ul>
-          <a href="#" className="close">Close</a>
+    <div>
+      {visible && (
+        <div id="page-loader" className={`page-loader${fading ? ' fade-out' : ''}`} aria-hidden={visible ? 'false' : 'true'}>
+          <div className="spinner" role="status" aria-label="Carregando">
+            <span className="dot" aria-hidden="true"></span>
+            <span className="visually-hidden">Carregando...</span>
+          </div>
         </div>
-      </nav>
+      )}
 
-      {/* Banner */}
-      <section id="banner">
-        <div className="inner">
-          <div className="logo"><span className="icon fa-gem"></span></div>
-          <h2>Minha PAP</h2>
-          <p>Descrição resumida do projeto ou tema da PAP</p>
-        </div>
-      </section>
-
-      {/* Wrapper Sections */}
-      <section id="wrapper">
-
-        {/* Seção 1 */}
-        <section id="one" className="wrapper spotlight style1">
-          <div className="inner">
-            <a href="#" className="image"><img src={pic01} alt="" /></a>
-            <div className="content">
-              <h2 className="major">Seção 1</h2>
-              <p>Descrição da primeira parte do projeto / PAP.</p>
-              <a href="#" className="special">Learn more</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção 2 */}
-        <section id="two" className="wrapper alt spotlight style2">
-          <div className="inner">
-            <a href="#" className="image"><img src={pic02} alt="" /></a>
-            <div className="content">
-              <h2 className="major">Seção 2</h2>
-              <p>Descrição da segunda parte do projeto / PAP.</p>
-              <a href="#" className="special">Learn more</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção 3 */}
-        <section id="three" className="wrapper spotlight style3">
-          <div className="inner">
-            <a href="#" className="image"><img src={pic03} alt="" /></a>
-            <div className="content">
-              <h2 className="major">Seção 3</h2>
-              <p>Descrição da terceira parte do projeto / PAP.</p>
-              <a href="#" className="special">Learn more</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção 4 / Features */}
-        <section id="four" className="wrapper alt style1">
-          <div className="inner">
-            <h2 className="major">Destaques</h2>
-            <p>Resumo geral ou destaques importantes do projeto / PAP.</p>
-            <section className="features">
-              <article>
-                <a href="#" className="image"><img src={pic04} alt="" /></a>
-                <h3 className="major">Feature 1</h3>
-                <p>Descrição da feature 1.</p>
-                <a href="#" className="special">Learn more</a>
-              </article>
-              <article>
-                <a href="#" className="image"><img src={pic05} alt="" /></a>
-                <h3 className="major">Feature 2</h3>
-                <p>Descrição da feature 2.</p>
-                <a href="#" className="special">Learn more</a>
-              </article>
-              <article>
-                <a href="#" className="image"><img src={pic06} alt="" /></a>
-                <h3 className="major">Feature 3</h3>
-                <p>Descrição da feature 3.</p>
-                <a href="#" className="special">Learn more</a>
-              </article>
-              <article>
-                <a href="#" className="image"><img src={pic07} alt="" /></a>
-                <h3 className="major">Feature 4</h3>
-                <p>Descrição da feature 4.</p>
-                <a href="#" className="special">Learn more</a>
-              </article>
-            </section>
-            <ul className="actions">
-              <li><a href="#" className="button">Browse All</a></li>
-            </ul>
-          </div>
-        </section>
-
-      </section>
-
-      {/* Footer */}
-      <section id="footer">
-        <div className="inner">
-          <h2 className="major">Contacto</h2>
-          <p>Informações de contacto ou mensagem final.</p>
-          <form method="post" action="#">
-            <div className="fields">
-              <div className="field">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" />
-              </div>
-              <div className="field">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" />
-              </div>
-              <div className="field">
-                <label htmlFor="message">Message</label>
-                <textarea name="message" id="message" rows="4"></textarea>
+      <div className="hero_area">
+        <header className="header_section">
+          <div className="header_top">
+            <div className="container-fluid ">
+              <div className="contact_nav">
+                <a href="#"><i className="fa fa-phone" aria-hidden="true"></i><span>Call : +01 123455678990</span></a>
+                <a href="#"><i className="fa fa-envelope" aria-hidden="true"></i><span>Email : demo@gmail.com</span></a>
+                <a href="#"><i className="fa fa-map-marker" aria-hidden="true"></i><span>Location</span></a>
               </div>
             </div>
-            <ul className="actions">
-              <li><input type="submit" value="Send Message" /></li>
-            </ul>
-          </form>
+          </div>
+          <div className="header_bottom">
+            <div className="container-fluid">
+              <nav className="navbar navbar-expand-lg custom_nav-container ">
+                <a className="navbar-brand" href="index.html"><span>A S M P Transportes e Turismo, Lda.</span></a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className=""> </span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul className="navbar-nav  ">
+                    <li className="nav-item active"><a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a></li>
+                    <li className="nav-item"><a className="nav-link" href="service.html">Services</a></li>
+                    <li className="nav-item"><a className="nav-link" href="about.html"> About</a></li>
+                    <li className="nav-item"><a className="nav-link" href="contact.html">Contact Us</a></li>
+                    <li className="nav-item"><a className="nav-link" href="#"> <i className="fa fa-user" aria-hidden="true"></i> Login</a></li>
+                    <li className="nav-item">
+                      <form className="form-inline">
+                        <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <section className="slider_section ">
+          <div className="slider_bg_box"><img src="images/slider-bg.jpg" alt=""/></div>
+          <div id="customCarousel1" className="carousel slide" data-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div className="container ">
+                  <div className="row">
+                    <div className="col-md-7 ">
+                      <div className="detail-box">
+                        <h1>We Provide best <br/>Transport Service</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum magnam, voluptates distinctio, officia architecto tenetur debitis hic aspernatur libero commodi atque fugit adipisci, blanditiis quidem dolorum odit voluptas? Voluptate, eveniet?</p>
+                        <div className="btn-box"><a href="#" className="btn1">Get A Quote</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <div className="container "><div className="row"><div className="col-md-7 "><div className="detail-box">
+                  <h1>We Provide best <br/>Transport Service</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum magnam, voluptates distinctio, officia architecto tenetur debitis hic aspernatur libero commodi atque fugit adipisci, blanditiis quidem dolorum odit voluptas? Voluptate, eveniet?</p>
+                  <div className="btn-box"><a href="#" className="btn1">Get A Quote</a></div>
+                </div></div></div></div>
+              </div>
+              <div className="carousel-item">
+                <div className="container "><div className="row"><div className="col-md-7 "><div className="detail-box">
+                  <h1>We Provide best <br/>Transport Service</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum magnam, voluptates distinctio, officia architecto tenetur debitis hic aspernatur libero commodi atque fugit adipisci, blanditiis quidem dolorum odit voluptas? Voluptate, eveniet?</p>
+                  <div className="btn-box"><a href="#" className="btn1">Get A Quote</a></div>
+                </div></div></div></div>
+              </div>
+            </div>
+            <ol className="carousel-indicators"><li data-target="#customCarousel1" data-slide-to="0" className="active"></li><li data-target="#customCarousel1" data-slide-to="1"></li><li data-target="#customCarousel1" data-slide-to="2"></li></ol>
+          </div>
+        </section>
+      </div>
+
+      <section className="service_section layout_padding">
+        <div className="service_container">
+          <div className="container ">
+            <div className="heading_container"><h2>Our <span>Services</span></h2><p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration</p></div>
+            <div className="row">
+              <div className="col-md-6 "><div className="box "><div className="img-box"><img src="images/s1.png" alt=""/></div><div className="detail-box"><h5>Air Transport</h5><p>fact that a reader will be distracted by the readable content of a page when looking at its layout.</p><a href="#">Read More</a></div></div></div>
+              <div className="col-md-6 "><div className="box "><div className="img-box"><img src="images/s2.png" alt=""/></div><div className="detail-box"><h5>Cargo Transport</h5><p>fact that a reader will be distracted by the readable content of a page when looking at its layout.</p><a href="#">Read More</a></div></div></div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <section className="about_section layout_padding-bottom">
+        <div className="container  ">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="detail-box">
+                <div className="heading_container"><h2>About <span>Us</span></h2></div>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <div className="col-md-6 "><div className="img-box"><img src="images/about-img.jpg" alt=""/></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="track_section layout_padding">
+        <div className="track_bg_box"><img src="images/track-bg.jpg" alt=""/></div>
+        <div className="container"><div className="row"><div className="col-md-6"><div className="heading_container"><h2>Track Your Shipment</h2></div>
+          <p>Iste reprehenderit maiores facilis saepe cumque molestias. Labore iusto excepturi, laborum aliquid pariatur veritatis autem, mollitia sint nesciunt hic error porro. Deserunt officia unde repellat beatae ipsum sed.</p>
+          <form action="#"><input type="text" placeholder="Enter Your Tracking Number"/><button type="submit">Track</button></form>
+        </div></div></div>
+      </section>
+
+      <section className="footer_section"><div className="container"><p>&copy; {new Date().getFullYear()} All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p></div></section>
     </div>
   );
 }
-
-export default App;
-
