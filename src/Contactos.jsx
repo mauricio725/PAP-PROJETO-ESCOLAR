@@ -45,8 +45,8 @@ const Contactos = () => {
         <button type="submit">Enviar</button>
       </form>
       <div className="info-contacto">
-        <p>Email: contato@exemplo.com</p>
-        <p>Telefone: +351 900 000 000</p>
+        <p>Email: asmptransporteseturismo@gmail.com</p>
+        <p>Telefone: +351 937 917 760</p>
       </div>
     </section>
   );

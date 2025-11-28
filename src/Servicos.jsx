@@ -1,10 +1,9 @@
 import React from "react";
-import "./css/style.css";
 
 const Servicos = () => {
   return (
-    <section id="servicos" className="servicos">
-      <h2>Os Nossos Serviços</h2>
+    <section className="servicos">
+      <h1>Nossos Serviços</h1>
       <ul>
         <li>Serviço 1</li>
         <li>Serviço 2</li>
@@ -15,3 +14,4 @@ const Servicos = () => {
 };
 
 export default Servicos;
+

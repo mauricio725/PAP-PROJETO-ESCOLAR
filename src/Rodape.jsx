@@ -4,7 +4,7 @@ import "./css/style.css";
 const Rodape = () => {
   return (
     <footer className="rodape">
-      <p>© 2025 MinhaMarca. Todos os direitos reservados.</p>
+      <p>© 2025 uirfbiufrbi.</p>
     </footer>
   );
 };
