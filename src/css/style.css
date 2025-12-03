@@ -1,8 +1,120 @@
+/* ==========================
+   Loader
+========================== */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+.loader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.loader-icon {
+  width: 50px;
+  margin-bottom: 10px;
+}
 
+.loader-circle {
+  width: 40px;
+  height: 40px;
+  border: 4px solid red;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
+/* ==========================
+   Cabeçalho
+========================== */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  position: relative;
+}
 
+.cab-left .logo {
+  width: 50px;
+}
 
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
+/* Menu dropdown */
+.menu-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #2980b9;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.menu-dropdown a {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-dropdown a:hover {
+  background: #1c5980;
+}
+
+/* ==========================
+   Home
+========================== */
+.home {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ==========================
+   Rodapé
+========================== */
+.rodape {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ==========================
+   Extras (opcional)
+========================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  transition: background 0.2s ease;
+}
