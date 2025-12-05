@@ -1,5 +1,5 @@
 /* =========================== */
-/* RESET BÁSICO                */
+/* RESET E BASE                */
 /* =========================== */
 * {
   margin: 0;
@@ -15,9 +15,8 @@ body {
 }
 
 /* =========================== */
-/* LOADER — FUNDO BRANCO       */
+/* LOADER                      */
 /* =========================== */
-
 .loader-overlay {
   position: fixed;
   inset: 0;
@@ -42,11 +41,10 @@ body {
 }
 
 /* =========================== */
-/* CABEÇALHO + MENU + LOGO     */
+/* CABEÇALHO                   */
 /* =========================== */
-
 .cabecalho {
-  background: #3498db;
+  background: #0a0a0a;
   color: white;
   padding: 15px 20px;
   display: flex;
@@ -58,23 +56,30 @@ body {
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 10px; /* espaço entre o ícone e o texto */
+  gap: 10px;
 }
 
 .logo {
-  width: 60px;   /* ajusta o tamanho do ícone */
+  width: 60px;
   height: 60px;
   object-fit: contain;
 }
 
 .titulo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #3498db; /* ou branco se estiver sobre fundo escuro */
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  display: block;
 }
 
-
-/* MENU 3 BARRAS */
+/* =========================== */
+/* MENU 3 BARRAS                */
+/* =========================== */
 .menu-icone {
   display: flex;
   flex-direction: column;
@@ -94,7 +99,7 @@ body {
   position: absolute;
   top: 75px;
   right: 20px;
-  background: #3498db;
+  background: #020202;
   color: white;
   padding: 15px;
   border-radius: 10px;
@@ -117,28 +122,86 @@ body {
 /* =========================== */
 /* HOME                        */
 /* =========================== */
-
 .home {
-  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
   text-align: center;
+  color: white;
+  padding: 20px;
 }
 
-.home h2 {
-  margin-bottom: 10px;
-  font-size: 26px;
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* escurece o fundo para legibilidade */
+  z-index: -1;
+}
+
+.home-texto h1,
+.home-texto h2 {
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.bem-vindo {
+  font-size: 48px;
+  animation: slideDown 1s ease-out;
+}
+
+.animado {
+  font-size: 32px;
+  color: #ffd700;
+  animation: fadeInLoop 3s infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLoop {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* BOTÃO HOME (opcional) */
+.btn-home {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #ff5c00;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+  background: #ff784d;
+  transform: scale(1.05);
 }
 
 /* =========================== */
 /* RODAPÉ                      */
 /* =========================== */
-
 .rodape {
   background: #2c3e50;
   color: white;
   padding: 12px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 0; /* tira barra branca extra */
 }
+
 
 
 
