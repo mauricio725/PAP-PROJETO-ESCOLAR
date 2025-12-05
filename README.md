@@ -19,7 +19,6 @@ A empresa presta vários serviços:
 - Comércio e reparação de veículos automóveis  
 - Aluguer de máquinas e equipamentos  
 
-O objetivo do projeto é criar um sistema simples para **organizar e controlar as despesas** relacionadas com estes serviços.
 
 
 ## Como Executar o Projeto
