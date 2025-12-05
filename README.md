@@ -1,18 +1,39 @@
-# PAP-PROJETO-ESCOLAR
-Projeto desenvolvido no âmbito da Prova de Aptidão Profissional (PAP). O sistema tem como objetivo gerir e controlar as despesas relacionadas com os diferentes serviços prestados pela empresa, tais como transporte rodoviário de passageiros e mercadorias, animação turística, alojamento local, e gestão florestal.  O projeto foi criado utilizando Vite + React e configurado com Tailwind CSS para o design responsivo. O código é versionado e atualizado através do GitHub Desktop, permitindo a sincronização e armazenamento das versões do projeto na nuvem.
-# React + Vite
+# PAP – Projeto Escolar
+Este projeto foi desenvolvido para a minha **Prova de Aptidão Profissional (PAP)**.  
+Antes de começar, recolhi informações da empresa onde o trabalho se baseia:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Empresa:** A S M P Transportes e Turismo, Lda.  
+**Morada:** Rua da Arte Xávega, 3060-693 Tocha, Cantanhede  
+**Telefone:** +351 937 917 760  
+**Email:** asmptransporteseturismo@gmail.com  
 
-Currently, two official plugins are available:
+A empresa presta vários serviços:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Transporte rodoviário de passageiros em veículos ligeiros  
+- Assistência a veículos na estrada  
+- Transporte rodoviário de mercadorias  
+- Atividades de animação turística  
+- Alojamento local  
+- Limpeza de edifícios  
+- Gestão e comércio florestal  
+- Comércio e reparação de veículos automóveis  
+- Aluguer de máquinas e equipamentos  
 
-## React Compiler
+O objetivo do projeto é criar um sistema simples para **organizar e controlar as despesas** relacionadas com estes serviços.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Como Executar o Projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clonar o repositório:
+git clone https://github.com/mauricio725/PAP-PROJETO-ESCOLAR
+
+2. Instalar as dependências:
+npm install
+
+3. Iniciar o servidor de desenvolvimento:
+npm run dev
+
+
+## Notas Finais
+
+Este projeto usa **React + Vite**
