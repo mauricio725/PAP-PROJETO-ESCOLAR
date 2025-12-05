@@ -1,120 +1,144 @@
-/* ==========================
-   Loader
-========================== */
+/* =========================== */
+/* RESET BÁSICO                */
+/* =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #333;
+}
+
+/* =========================== */
+/* LOADER — FUNDO BRANCO       */
+/* =========================== */
+
 .loader-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
+  inset: 0;
+  background: #ffffff;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  z-index: 999999;
 }
 
-.loader {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.loader-icon {
-  width: 50px;
-  margin-bottom: 10px;
-}
-
-.loader-circle {
-  width: 40px;
-  height: 40px;
-  border: 4px solid red;
-  border-top: 4px solid transparent;
+.loader-bounce {
+  width: 20px;
+  height: 20px;
+  background: red;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: bounceLoader 0.6s infinite alternate ease-in-out;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+@keyframes bounceLoader {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-28px); }
 }
 
-/* ==========================
-   Cabeçalho
-========================== */
+/* =========================== */
+/* CABEÇALHO + MENU + LOGO     */
+/* =========================== */
+
 .cabecalho {
+  background: #3498db;
+  color: white;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: #3498db;
-  color: white;
   position: relative;
 }
 
-.cab-left .logo {
-  width: 50px;
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre o ícone e o texto */
 }
 
-.hamburger {
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
+.logo {
+  width: 60px;   /* ajusta o tamanho do ícone */
+  height: 60px;
+  object-fit: contain;
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3498db; /* ou branco se estiver sobre fundo escuro */
+}
+
+
+/* MENU 3 BARRAS */
+.menu-icone {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
 }
 
-/* Menu dropdown */
-.menu-dropdown {
+.barra {
+  width: 28px;
+  height: 4px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* MENU DROPDOWN */
+.menu-opcoes {
   position: absolute;
-  top: 60px;
+  top: 75px;
   right: 20px;
-  background: #2980b9;
-  border-radius: 5px;
+  background: #3498db;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  min-width: 150px;
-  z-index: 1000;
+  gap: 12px;
+  z-index: 10000;
 }
 
-.menu-dropdown a {
-  padding: 10px 20px;
+.menu-opcoes a {
   color: white;
   text-decoration: none;
+  font-size: 18px;
 }
 
-.menu-dropdown a:hover {
-  background: #1c5980;
+.menu-opcoes a:hover {
+  text-decoration: underline;
 }
 
-/* ==========================
-   Home
-========================== */
+/* =========================== */
+/* HOME                        */
+/* =========================== */
+
 .home {
-  padding: 20px;
+  padding: 40px;
   text-align: center;
 }
 
-/* ==========================
-   Rodapé
-========================== */
+.home h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+/* =========================== */
+/* RODAPÉ                      */
+/* =========================== */
+
 .rodape {
   background: #2c3e50;
   color: white;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-/* ==========================
-   Extras (opcional)
-========================== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
 
-a {
-  transition: background 0.2s ease;
-}
+

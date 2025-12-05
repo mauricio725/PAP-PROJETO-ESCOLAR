@@ -1,31 +1,34 @@
-import React, { useState } from 'react';
-import icon1 from './img/icone1.png';
-import './css/style.css';
+import React, { useState } from "react";
 
 export default function Cabecalho() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
   return (
     <header className="cabecalho">
-      <div className="cab-left">
-        <img src={icon1} alt="Logo" className="logo" />
+       <div className="logo-area">
+      <img src="./img/icone1.png" alt="logo" className="logo" />
+      <span className="titulo">ASPM Transportes e Turismo</span>
+    </div>
+
+      <div className="menu-icone" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="barra"></div>
+        <div className="barra"></div>
+        <div className="barra"></div>
       </div>
-      <div className="cab-right">
-        <button className="hamburger" onClick={toggleMenu}>
-          &#9776;
-        </button>
-        {menuOpen && (
-          <nav className="menu-dropdown">
-            <a href="#home">Home</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
-          </nav>
-        )}
-      </div>
+
+      {menuOpen && (
+        <nav className="menu-opcoes">
+          <a href="#">Início</a>
+          <a href="#">Serviços</a>
+          <a href="#">Contactos</a>
+          <a href="#">Sobre Nós</a>
+        </nav>
+      )}
     </header>
   );
 }
+
+
+
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Rodape() {
   return (
@@ -7,5 +7,7 @@ export default function Rodape() {
     </footer>
   );
 }
+
+
 
 
