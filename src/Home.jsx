@@ -1,21 +1,19 @@
 import React from "react";
-import fundo from "./img/fundo.jpg";
+import "./css/style.css";
+import fundo from "./img/fundo.jpg"; // coloca a tua imagem aqui
 
 export default function Home() {
   return (
-    <main
-      className="home"
-      style={{
-        backgroundImage: `url(${fundo})`
-      }}
-    >
+    <div className="home" style={{ backgroundImage: `url(${fundo})` }}>
       <div className="home-texto">
         <h1 className="bem-vindo">Bem-vindo</h1>
-        <h2 className="animado">Veja Nossos Serviços, Reserva, Viaje!</h2>
+        <h2 className="animado">ASPM Transportes e Turismo</h2>
       </div>
-    </main>
-  );
+    </div>
+  );       
 }
+
+
 
 
 
