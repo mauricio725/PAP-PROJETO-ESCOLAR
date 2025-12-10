@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import icone from "./img/icone1.png";
+
 import Login from "./login/Login";
 
 export default function Cabecalho() {
@@ -15,8 +15,6 @@ export default function Cabecalho() {
   return (
     <header className="cabecalho">
       <div className="logo-area">
-        <img src={icone} alt="logo" className="logo" />
-        <span className="titulo">ASPM Transportes e Turismo</span>
       </div>
 
       <div className="menu-icone" onClick={() => setMenuOpen(!menuOpen)}>
