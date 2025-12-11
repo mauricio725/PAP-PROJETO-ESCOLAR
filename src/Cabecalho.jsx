@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import Login from "./login/Login";
+import icone1 from "./img/icone1.png";
 
 export default function Cabecalho() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +14,9 @@ export default function Cabecalho() {
 
   return (
     <header className="cabecalho">
-      <div className="logo-area">
+
+      <div className="logo-icone">
+        <img src={icone1} alt="Ícone" className="icone-img" />
       </div>
 
       <div className="menu-icone" onClick={() => setMenuOpen(!menuOpen)}>
@@ -29,7 +31,13 @@ export default function Cabecalho() {
           <a href="#">Serviços</a>
           <a href="#">Contactos</a>
           <a href="#">Sobre Nós</a>
-          <a href="#" onClick={() => setLoginOpen(true)}>
+          <a
+            href="#"
+            onClick={() => {
+              setLoginOpen(true);
+              setMenuOpen(false);
+            }}
+          >
             Login
           </a>
         </nav>
@@ -45,6 +53,15 @@ export default function Cabecalho() {
     </header>
   );
 }
+
+
+
+
+
+
+
+
+
 
 
 
