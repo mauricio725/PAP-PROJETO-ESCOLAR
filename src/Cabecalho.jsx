@@ -14,10 +14,7 @@ export default function Cabecalho() {
 
   return (
     <header className="cabecalho">
-
-      <div className="logo-icone">
-        <img src={icone1} alt="Ícone" className="icone-img" />
-      </div>
+      <h2 className="cabecalho-titulo">Bem Vindo</h2>
 
       <div className="menu-icone" onClick={() => setMenuOpen(!menuOpen)}>
         <div className="barra"></div>

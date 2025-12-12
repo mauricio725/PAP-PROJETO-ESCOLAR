@@ -37,7 +37,7 @@ body {
 .cabecalho {
   background: #0a0a0a;
   color: white;
-  padding: 15px 20px;
+  padding: 30px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,7 +105,7 @@ body {
 }
 
 .home {
-  min-height: 100vh;
+  min-height: 89vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,6 +117,7 @@ body {
   text-align: center;
   color: white;
   padding: 20px;
+  z-index: 1;
 }
 
 .home::before {
@@ -140,9 +141,9 @@ body {
 }
 
 .animado {
-  font-size: 32px;
-  color: #ffd700;
-  animation: fadeInLoop 3s infinite;
+  font-size: 50px;
+  color: #cf3043;
+  animation: fadeInLoop 1s infinite;
 }
 
 @keyframes slideDown {
@@ -174,11 +175,12 @@ body {
 }
 
 .rodape {
-  background: #2c3e50;
-  color: white;
+  background: transparent ;
+  color: rgb(0, 0, 0);
   padding: 12px;
   text-align: center;
   margin-top: 0;
+  z-index: 5;
 }
 
 .login-overlay {
@@ -237,6 +239,13 @@ body {
   font-size: 14px;
   text-align: center;
 }
+
+.logo-home {
+  width: 300px; /* muda conforme quiseres */
+  height: auto;
+  margin-bottom: 10px;
+}
+
 
 
 
