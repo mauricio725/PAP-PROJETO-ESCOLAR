@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Login from "./login/Login";
-import icone1 from "./img/icone1.png";
+import Login from "../página/Login";
+import icone1 from "../assets/img/icone1.png";
+
 
 export default function Cabecalho() {
   const [menuOpen, setMenuOpen] = useState(false);

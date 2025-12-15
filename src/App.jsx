@@ -1,8 +1,8 @@
 import React from 'react';
-import Cabecalho from './Cabecalho';
-import Home from './Home';
-import Rodape from './Rodape';
-import Loader from './Loader';
+import Cabecalho from './componentes/Cabecalho';
+import Home from './página/Home';
+import Rodape from './componentes/Rodape';
+import Loader from './componentes/Loader';
 import './css/style.css';
 
 export default function App() {

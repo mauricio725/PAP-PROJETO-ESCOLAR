@@ -1,7 +1,9 @@
 import React from "react";
-import "./css/style.css";
-import fundo from "./img/fundo.jpg"; 
-import icone1 from "./img/icone1.png"; // <-- o teu PNG
+import "../css/style.css";                // CSS
+import fundo from "../assets/img/fundo.jpg";   // Imagem
+import icone1 from "../assets/img/icone1.png"; // Imagem
+
+// <-- o teu PNG
 
 export default function Home() {
   return (
@@ -20,9 +22,3 @@ export default function Home() {
     </div>
   );       
 }
-
-
-
-
-
-
