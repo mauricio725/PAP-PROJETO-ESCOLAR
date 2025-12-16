@@ -10,7 +10,6 @@ export default function Home() {
     <div className="home" style={{ backgroundImage: `url(${fundo})` }}>
       <div className="home-texto">
 
-        {/* Imagem no lugar do "Bem-vindo" */}
         <img 
           src={icone1} 
           alt="Ícone ASPM" 
@@ -21,4 +20,5 @@ export default function Home() {
       </div>
     </div>
   );       
-}
+} 
+
