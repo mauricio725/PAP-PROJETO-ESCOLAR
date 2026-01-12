@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Icone1 from "./img/icone1.png";
+
 
 const Cabecalho = ({ setCurrentPage }) => {
   const [scrollDir, setScrollDir] = useState("up");
@@ -26,22 +26,24 @@ const Cabecalho = ({ setCurrentPage }) => {
   };
 
   return (
-    <header className={`cabecalho ${scrollDir === "down" ? "hide" : "show"}`}>
-      <img src={Icone1} alt="Ícone 1" className="logo-img" />
-      <nav>
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul className={menuOpen ? "active" : ""}>
-          <li onClick={() => handleClick("home")}>Home</li>
-          <li onClick={() => handleClick("servicos")}>Serviços</li>
-          <li onClick={() => handleClick("reservas")}>Reservas</li>
-          <li onClick={() => handleClick("contactos")}>Contactos</li>
-        </ul>
-      </nav>
-    </header>
+<header className={`cabecalho ${scrollDir === "down" ? "hide" : "show"}`}>
+  <div className="logo">ㅤ</div>
+  <nav>
+    <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul className={menuOpen ? "active" : ""}>
+      <li onClick={() => handleClick("home")}>Home</li>
+      <li onClick={() => handleClick("servicos")}>Serviços</li>
+      <li onClick={() => handleClick("reservas")}>Reservas</li>
+      <li onClick={() => handleClick("contactos")}>Contactos</li>
+    </ul>
+  </nav>
+</header>
+
   );
 };
 
