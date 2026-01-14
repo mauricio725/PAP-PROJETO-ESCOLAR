@@ -1,66 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const Cabecalho = ({ setCurrentPage }) => {
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+export default function Cabecalho() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [lastScrollY]);
-
-  // Fecha menu ao mudar para desktop
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleClick = (page) => {
-    setCurrentPage(page);
-    setMenuOpen(false);
-  };
-
   return (
-    <header className={`cabecalho ${showHeader ? "show" : "hide"}`}>
-      <div className="logo">ASMP Transportes</div>
+    <header className="cabecalho">
+      <div className="logo">MinhaLogo</div>
 
+      {/* Menu Desktop */}
       <nav>
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <ul className="desktop">
+          <li>Início</li>
+          <li>Serviços</li>
+          <li>Contactos</li>
+          <li>Sobre Nós</li>
+        </ul>
+
+        {/* Hamburger Mobile */}
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
 
-        <ul className={menuOpen ? "active" : ""}>
-          <li onClick={() => handleClick("home")}>Home</li>
-          <li onClick={() => handleClick("servicos")}>Serviços</li>
-          <li onClick={() => handleClick("reservas")}>Reservas</li>
-          <li onClick={() => handleClick("contactos")}>Contactos</li>
+        {/* Menu Mobile */}
+        <ul className={`mobile ${menuOpen ? "active" : ""}`}>
+          <li onClick={() => setMenuOpen(false)}>Início</li>
+          <li onClick={() => setMenuOpen(false)}>Serviços</li>
+          <li onClick={() => setMenuOpen(false)}>Contactos</li>
+          <li onClick={() => setMenuOpen(false)}>Sobre Nós</li>
         </ul>
       </nav>
     </header>
   );
-};
-
-export default Cabecalho;
-
-
-
+}
 
 
