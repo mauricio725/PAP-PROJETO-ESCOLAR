@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import icon from "./img/icone1.png"; // <-- IMPORTA O ÍCONE
 import "./css/style.css";
 const Loader = () => {
   const [visible, setVisible] = useState(true);
@@ -15,7 +14,6 @@ const Loader = () => {
     <div className="loader-overlay">
   <div className="loader-circle">
     <div className="spinner"></div>
-    <img src={icon} alt="icon" className="loader-icon" />
   </div>
 </div>
 

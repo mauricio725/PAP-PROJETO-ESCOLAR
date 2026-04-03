@@ -1,19 +1,23 @@
 import React, { useState } from "react";
+import logo from "./img/icone1.png";
 
-export default function Cabecalho() {
+export default function Cabecalho({ setCurrentPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="cabecalho">
-      <div className="logo">MinhaLogo</div>
+      <div className="logo">
+  <img src={logo} alt="Logo" />
+</div>
+
 
       {/* Menu Desktop */}
       <nav>
         <ul className="desktop">
-          <li>Início</li>
-          <li>Serviços</li>
-          <li>Contactos</li>
-          <li>Sobre Nós</li>
+          <li onClick={() => setCurrentPage("home")}>Início</li>
+          <li onClick={() => setCurrentPage("servicos")}>Serviços</li>
+          <li onClick={() => setCurrentPage("contactos")}>Contactos</li>
+          <li onClick={() => setCurrentPage("sobre")}>Sobre Nós</li>
         </ul>
 
         {/* Hamburger Mobile */}
@@ -28,14 +32,15 @@ export default function Cabecalho() {
 
         {/* Menu Mobile */}
         <ul className={`mobile ${menuOpen ? "active" : ""}`}>
-          <li onClick={() => setMenuOpen(false)}>Início</li>
-          <li onClick={() => setMenuOpen(false)}>Serviços</li>
-          <li onClick={() => setMenuOpen(false)}>Contactos</li>
-          <li onClick={() => setMenuOpen(false)}>Sobre Nós</li>
+          <li onClick={() => { setCurrentPage("home"); setMenuOpen(false); }}>Início</li>
+          <li onClick={() => { setCurrentPage("servicos"); setMenuOpen(false); }}>Serviços</li>
+          <li onClick={() => { setCurrentPage("contactos"); setMenuOpen(false); }}>Contactos</li>
+          <li onClick={() => { setCurrentPage("sobre"); setMenuOpen(false); }}>Sobre Nós</li>
         </ul>
       </nav>
     </header>
   );
 }
+
 
 

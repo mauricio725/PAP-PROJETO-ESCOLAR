@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cabecalho from "./Cabecalho";
 import Home from "./Home";
-import Servicos from "./Servicos";
+import Servicos from "./Servicos.jsx";
 import Reservas from "./Reservas";
 import Contactos from "./Contactos";
 import Loader from "./Loader";
