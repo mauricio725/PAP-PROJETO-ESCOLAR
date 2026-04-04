@@ -4,6 +4,7 @@ import Home from "./Home";
 import Servicos from "./Servicos.jsx";
 import Reservas from "./Reservas";
 import Contactos from "./Contactos";
+import SobreNos from "./SobreNos";
 import Loader from "./Loader";
 import "./css/style.css";
 
@@ -26,6 +27,8 @@ function App() {
         return <Reservas />;
       case "contactos":
         return <Contactos />;
+      case "sobre":
+        return <SobreNos />;
       default:
         return <Home />;
     }
@@ -46,7 +49,3 @@ function App() {
 }
 
 export default App;
-
-
-
-

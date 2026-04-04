@@ -6,12 +6,10 @@ export default function Cabecalho({ setCurrentPage }) {
 
   return (
     <header className="cabecalho">
-      <div className="logo">
-  <img src={logo} alt="Logo" />
-</div>
+      <div className="logo" onClick={() => setCurrentPage("home")}>
+        <img src={logo} alt="Logo" />
+      </div>
 
-
-      {/* Menu Desktop */}
       <nav>
         <ul className="desktop">
           <li onClick={() => setCurrentPage("home")}>Início</li>
@@ -20,7 +18,6 @@ export default function Cabecalho({ setCurrentPage }) {
           <li onClick={() => setCurrentPage("sobre")}>Sobre Nós</li>
         </ul>
 
-        {/* Hamburger Mobile */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -30,7 +27,6 @@ export default function Cabecalho({ setCurrentPage }) {
           <span></span>
         </div>
 
-        {/* Menu Mobile */}
         <ul className={`mobile ${menuOpen ? "active" : ""}`}>
           <li onClick={() => { setCurrentPage("home"); setMenuOpen(false); }}>Início</li>
           <li onClick={() => { setCurrentPage("servicos"); setMenuOpen(false); }}>Serviços</li>
@@ -41,6 +37,3 @@ export default function Cabecalho({ setCurrentPage }) {
     </header>
   );
 }
-
-
-
