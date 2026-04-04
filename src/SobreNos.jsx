@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-
-export default function SobreNos() {
+export default function SobreNos({ setCurrentPage }) {
   return (
-    <section>
-      <div className="card-preta">
-        <h1>Sobre Nós</h1>
+    <section className="sobre-wrapper">
+      <div className="sobre-card">
+        <h1 className="sobre-titulo">
+          Sobre <span>Nós</span>
+        </h1>
 
-        <p>
+        <p className="sobre-texto">
           A <strong>ASMP Transportes e Turismo</strong> é uma empresa dedicada ao
           transporte de passageiros, oferecendo soluções seguras, confortáveis e
           adaptadas às necessidades de cada cliente. Com experiência no setor e
@@ -14,22 +14,26 @@ export default function SobreNos() {
           profissional, pontual e de confiança.
         </p>
 
-        <h2>Especialidades</h2>
-        <ul>
+        <h2 className="sobre-subtitulo">Especialidades</h2>
+
+        <ul className="sobre-lista">
           <li>Transporte Escolar</li>
           <li>Transporte Ocupacional</li>
           <li>Transporte de Turismo</li>
           <li>Serviços Personalizados para Grupos e Eventos</li>
         </ul>
 
-        <p>
+        <p className="sobre-texto">
           O nosso objetivo é proporcionar viagens tranquilas, seguras e
           eficientes, sempre com foco no bem‑estar dos passageiros.
         </p>
 
-        <Link to="/contactos" className="btn-vermelho">
+        <button
+          className="btn-vermelho"
+          onClick={() => setCurrentPage("contactos")}
+        >
           Contactar Empresa
-        </Link>
+        </button>
       </div>
     </section>
   );

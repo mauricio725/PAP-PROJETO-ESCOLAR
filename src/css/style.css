@@ -325,3 +325,74 @@ h1, h2, h3 {
   background: #ff1f1f;
   transform: translateY(-2px);
 }
+
+/* --- SOBRE NÓS --- */
+
+.sobre-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.sobre-card {
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 59, 59, 0.4);
+  padding: 40px 35px;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(255, 59, 59, 0.15);
+}
+
+.sobre-titulo {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sobre-titulo span {
+  color: #ff3b3b;
+}
+
+.sobre-subtitulo {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 26px;
+  color: #ff3b3b;
+}
+
+.sobre-texto {
+  color: #ddd;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.sobre-lista {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.sobre-lista li {
+  background: #111;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ff3b3b;
+  color: #eee;
+  transition: 0.2s;
+}
+
+.sobre-lista li:hover {
+  background: #151515;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .contactos-wrapper,
+  .servicos-wrapper,
+  .sobre-wrapper {
+    padding: 0 15px;
+  }
+}
+
+

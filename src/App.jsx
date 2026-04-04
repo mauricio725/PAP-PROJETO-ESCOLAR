@@ -4,7 +4,7 @@ import Home from "./Home";
 import Servicos from "./Servicos.jsx";
 import Reservas from "./Reservas";
 import Contactos from "./Contactos";
-import SobreNos from "./SobreNos";
+import SobreNos from "./SobreNos.jsx";
 import Loader from "./Loader";
 import "./css/style.css";
 
@@ -28,7 +28,7 @@ function App() {
       case "contactos":
         return <Contactos />;
       case "sobre":
-        return <SobreNos />;
+        return <SobreNos setCurrentPage={setCurrentPage} />;
       default:
         return <Home />;
     }
