@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/style.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Rodape from "./Rodape";
 import taxi from "./img/imagemtaxi.jpg";
 
 export default function Home() {
-  const imagens = [taxi, "/imagem2.jpg", "/imagem3.jpg"];
+  // Slider de imagens
+  const imagens = [taxi];
   const [index, setIndex] = useState(0);
 
   const anterior = () => {
@@ -16,22 +17,66 @@ export default function Home() {
     setIndex((prev) => (prev === imagens.length - 1 ? 0 : prev + 1));
   };
 
+  // Caixa de perguntas
+  const perguntas = [
+    "O que deseja saber?",
+    "Precisa de transporte?",
+    "Quer conhecer os nossos serviços?",
+    "Deseja contactar-nos?"
+  ];
+
+  const [indexPergunta, setIndexPergunta] = useState(0);
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setIndexPergunta((prev) => (prev + 1) % perguntas.length);
+    }, 2500);
+
+    return () => clearInterval(intervalo);
+  }, []);
+
   return (
     <div className="home">
-      <div className="home-capa">
-        <h1>Bem-vindo à ASMP Transportes e Turismo</h1>
-        <p>Transporte e turismo com segurança, conforto e profissionalismo.</p>
+      <section className="capa">
+        <div className="capa-texto">
+          <h1>Bem-vindo à ASMP Transportes e Turismo</h1>
+          <p>Transporte e turismo com segurança, conforto e profissionalismo.</p>
+          <p className="frase-impacto">
+            A ASMP leva-o onde precisa — com segurança, conforto e estilo.
+          </p>
 
-        <div className="slider">
-          <button className="seta seta-esquerda" onClick={anterior}>
+          <div className="icones-servicos">
+            <div><i className="fa-solid fa-car"></i><p>Transporte</p></div>
+            <div><i className="fa-solid fa-suitcase"></i><p>Turismo</p></div>
+            <div><i className="fa-solid fa-home"></i><p>Alojamento</p></div>
+          </div>
+
+          <button className="btn-reserva">Reservar Transporte</button>
+        </div>
+
+        <div className="caixa-slider">
+          <button className="seta-slider seta-esq" onClick={anterior}>
             <i className="fa-solid fa-chevron-left"></i>
           </button>
 
-          <img src={imagens[index]} alt="Imagem ASMP" className="slider-img" />
+          <img src={imagens[index]} alt="ASMP Transporte" className="slider-img" />
 
-          <button className="seta seta-direita" onClick={seguinte}>
+          <button className="seta-slider seta-dir" onClick={seguinte}>
             <i className="fa-solid fa-chevron-right"></i>
           </button>
+        </div>
+      </section>
+
+      {/* Caixa de pergunta automática */}
+      <div className="caixa-pergunta">
+        <div className="pergunta-slider">
+          <p>{perguntas[indexPergunta]}</p>
+        </div>
+
+        <div className="botoes-pergunta">
+          <button onClick={() => window.location.href = "#servicos"}>Serviços</button>
+          <button onClick={() => window.location.href = "#sobre"}>Sobre Nós</button>
+          <button onClick={() => window.location.href = "#contactos"}>Contactos</button>
         </div>
       </div>
 
